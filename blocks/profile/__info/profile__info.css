@@ -3,11 +3,12 @@
   flex-direction: column;
   justify-content: center;
   row-gap: 10px;
-  width: 236px;
+  width: 80%;
+  text-align: center;
 }
 
-@media screen and (min-width: 740px) {
+@media screen and (min-width: 656px) {
   .profile__info {
-    width: 483px;
+    text-align: start;
   }
 }

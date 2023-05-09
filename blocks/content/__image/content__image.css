@@ -4,6 +4,7 @@
   height: 214px;
   border-radius: 30px;
   object-fit: cover;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 740px) {

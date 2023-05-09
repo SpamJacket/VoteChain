@@ -9,3 +9,9 @@
   white-space: nowrap;
   overflow: hidden;
 }
+
+@media screen and (min-width: 656px) {
+  .profile__name {
+    font-size: 26px;
+  }
+}

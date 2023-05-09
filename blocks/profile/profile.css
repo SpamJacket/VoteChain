@@ -1,7 +1,7 @@
 .profile {
   box-sizing: border-box;
   position: relative;
-  max-width: 612px;
+  max-width: 560px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -16,11 +16,5 @@
   .profile {
     max-width: 966px;
     flex-direction: row;
-  }
-}
-
-@media screen and (min-width: 740px) {
-  .profile {
-    max-width: 966px;
   }
 }
