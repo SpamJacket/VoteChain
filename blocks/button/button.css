@@ -1,0 +1,26 @@
+.button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: opacity .3s ease-out;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.button:hover {
+  opacity: .7;
+}
+
+@media screen and (min-width: 740px) {
+  .button {
+    top: 13px;
+    right: 13px;
+  }
+}

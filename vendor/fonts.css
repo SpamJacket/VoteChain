@@ -1,0 +1,13 @@
+@font-face {
+    src: url('./fonts/poppins/PoppinsRegular-B2Bw.otf') format('otf');
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    src: url('./fonts/poppins/PoppinsMedium-1JPv.otf') format('otf');
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-style: normal;
+}

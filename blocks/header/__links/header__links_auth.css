@@ -1,0 +1,14 @@
+.header__links {
+  display: flex;
+  align-items: center;
+  column-gap: 42px;
+  justify-content: center;
+  min-width: fit-content;
+}
+
+@media screen and (min-width: 940px) {
+  .header__links {
+    min-width: 203px;
+    justify-content: flex-start;
+  }
+}

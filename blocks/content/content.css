@@ -1,0 +1,17 @@
+.content {
+  max-width: 966px;
+  width: 100%;
+  padding-bottom: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 276px);
+  grid-template-rows: repeat(auto-fit, 296px);
+  gap: 40px 60px;
+  justify-content: center;
+  justify-items: center;
+}
+
+@media screen and (min-width: 740px) {
+  .content {
+    grid-template-rows: repeat(auto-fit, 360px);
+  }
+}
