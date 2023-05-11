@@ -1,0 +1,149 @@
+.popup__input-info-img {
+  box-sizing: border-box;
+  grid-row: 1 / span 2;
+  height: 200px;
+  padding-top: 70px;
+}
+
+.popup__input-info-img::before {
+  content: 'Выберите фото';
+  display: inline-block;
+  max-width: 180px;
+  width: 100%;
+  text-align: center;
+  border: 3px #e7e0e03b solid;
+  border-radius: 3px;
+  padding: 5px 8px;
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(255, 255, 255, .7);
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+}
+
+.popup__input-info-img::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.popup__input-info-text {
+  outline: none;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: none;
+  padding: 0;
+  font-weight: 400;
+  font-size: 18px;
+  color: #141B33;
+  padding: 5px 8px;
+}
+
+.popup__info-settings {
+  display: grid;
+  position: relative;
+  grid-template-columns: 200px 500px;
+  grid-template-rows: 50px 1fr;
+  column-gap: 20px;
+  text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .popup__info-settings {
+    grid-template-columns: 200px 340px;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .popup__info-settings {
+    grid-template-columns: 200px 200px;
+  }
+}
+
+@media screen and (max-width: 704px) {
+  .popup__info-settings {
+    grid-template-columns: 276px;
+    grid-template-rows: 40px 40px 1fr;
+    row-gap: 10px;
+  }
+
+  .popup__input-info-img {
+    grid-row: 1;
+    height: 40px;
+    padding: 0 38px;
+  }
+}
+
+@media screen and (max-width: 445px) {
+  .popup__info-settings {
+    margin-top: 20px;
+    grid-template-columns: 200px;
+    grid-template-rows: 40px 50px 1fr;
+  }
+}
+
+.popup__input-info-text:nth-child(2) {
+  margin-bottom: 10px;
+}
+
+.popup__input-card-img {
+  width: 140px;
+  margin-bottom: 10px;
+}
+
+.popup__input-card-img::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.popup__input-card-img::before {
+  content: 'Выберите фото';
+  display: inline-block;
+  width: 120px;
+  text-align: center;
+  border: 3px #e7e0e03b solid;
+  border-radius: 3px;
+  padding: 5px 8px;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(255, 255, 255, .7);
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+}
+
+.popup__input-card-text {
+  outline: none;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: none;
+  padding: 0;
+  font-weight: 400;
+  font-size: 12px;
+  color: #141B33;
+  padding: 5px 8px;
+  width: 140px;
+}
+
+.popup__input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100%;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 8px;
+  font-weight: 400;
+  font-size: 18px;
+  color: #141B33;
+  outline: none;
+}
+
+@media screen and (max-width: 768px) {
+  .popup__input {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 524px) {
+  .popup__input {
+    font-size: 14px;
+  }
+}

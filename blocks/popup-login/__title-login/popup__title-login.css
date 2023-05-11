@@ -1,0 +1,11 @@
+.popup__title-login {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 656px) {
+  .popup__title-login {
+    font-size: 24px;
+  }
+}

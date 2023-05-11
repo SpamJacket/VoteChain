@@ -1,0 +1,23 @@
+.popup__add-button {
+  border: 3px #ffffff solid;
+  border-radius: 3px;
+  padding: 0;
+  width: 160px;
+  min-height: 30px;
+  background-image: url("../../../images/add.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  cursor: pointer;
+  opacity: .6;
+  transition: ease-out .2s opacity;
+}
+
+.row-gap {
+  row-gap: 20px;
+}
+
+.popup__add-button:hover {
+  opacity: 1;
+}

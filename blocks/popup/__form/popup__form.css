@@ -1,0 +1,28 @@
+.popup__form {
+  box-sizing: border-box;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 360px;
+  grid-template-rows: 200px 40px 150px;
+  row-gap: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .popup__form {
+    grid-template-rows: 180px 40px 120px;
+  }
+}
+
+@media screen and (max-width: 524px) {
+  .popup__form {
+    grid-template-columns: 276px;
+    grid-template-rows: 160px 40px 100px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .popup__form {
+    grid-template-columns: 232px;
+  }
+}

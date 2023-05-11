@@ -19,7 +19,7 @@
         <a class="header__link" href="./favourites.html">Избранное</a>
       </nav>
       <form class="header__form">
-        <input class="header__search" placeholder="Поиск">
+        <input class="header__search" name="search" type="text" placeholder="Поиск">
       </form>
       <nav class="header__links">
         <a class="header__link" href="./profile.html">Личный кабинет</a>
@@ -63,6 +63,138 @@
         <h2 class="content__title">Какой фрукт вкуснее?</h2>
       </article>
     </main>
+
+    <div class="popup popup_type_contest">
+      <div class="popup__container">
+        <button class="popup__button" type="button" aria-label="Кнопка закрытия"></button>
+
+        <div class="popup__info">
+          <img class="popup__image" src="./images/fruits.png" alt="Фрукты">
+          <h3 class="popup__title">Какой фрукт вкуснее?</h3>
+          <p class="popup__text">В этом голосовании соревнуются грейпфрут, апельсин, киви и виноград за звание лучшего фрукта.</p>
+        </div>
+
+        <ul class="popup__card-list">
+          <li class="popup__card">
+            <img class="popup__card-img" src="./images/fruits.png" alt="Апельсин">
+            <h4 class="popup__card-title">Апельсин</h4>
+            <p class="popup__card-description">Ораньжевый фрукт</p>
+            <button class="popup__like" type="button" aria-label="Лайк"></button>
+            <p class="popup__counter">0</p>
+          </li>
+          <li class="popup__card">
+            <img class="popup__card-img" src="./images/fruits.png" alt="Грейпфрут">
+            <h4 class="popup__card-title">Грейпфрут</h4>
+            <p class="popup__card-description">Красный фрукт</p>
+            <button class="popup__like" type="button" aria-label="Лайк"></button>
+            <p class="popup__counter">0</p>
+          </li>
+          <li class="popup__card">
+            <img class="popup__card-img" src="./images/fruits.png" alt="Киви">
+            <h4 class="popup__card-title">Киви</h4>
+            <p class="popup__card-description">Зеленый фрукт</p>
+            <button class="popup__like" type="button" aria-label="Лайк"></button>
+            <p class="popup__counter">0</p>
+          </li>
+          <li class="popup__card">
+            <img class="popup__card-img" src="./images/fruits.png" alt="Виноград">
+            <h4 class="popup__card-title">Виноград</h4>
+            <p class="popup__card-description">Фиолетовый фрукт</p>
+            <button class="popup__like" type="button" aria-label="Лайк"></button>
+            <p class="popup__counter">0</p>
+          </li>
+          <li class="popup__card">
+            <img class="popup__card-img" src="./images/fruits.png" alt="Апельсин">
+            <h4 class="popup__card-title">Апельсин</h4>
+            <p class="popup__card-description">Ораньжевый фрукт</p>
+            <button class="popup__like" type="button" aria-label="Лайк"></button>
+            <p class="popup__counter">0</p>
+          </li>
+          <li class="popup__card">
+            <img class="popup__card-img" src="./images/fruits.png" alt="Грейпфрут">
+            <h4 class="popup__card-title">Грейпфрут</h4>
+            <p class="popup__card-description">Красный фрукт</p>
+            <button class="popup__like" type="button" aria-label="Лайк"></button>
+            <p class="popup__counter">0</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="popup popup_type_contest-settings">
+      <div class="popup__container row-gap">
+        <button class="popup__button" type="button" aria-label="Кнопка закрытия"></button>
+
+        <form class="popup__info-settings">
+          <input class="popup__input-info-img" name="image" type="file" accept="image/png, image/jpeg">
+          <input class="popup__input-info-text" name="contest-title" type="text" placeholder="Введите название" required
+            minlength="2" maxlength="100" value="">
+          <textarea class="popup__input-info-text" name="contest-description" placeholder="Введите описание" required
+          minlength="2" maxlength="512" value=""></textarea>
+        </form>
+
+        <button class="popup__add-button" type="button" aria-label="Добавить конкурс"></button>
+        
+        <ul class="popup__card-list">
+          <li class="popup__card">
+            <form class="popup__card-form">
+              <input class="popup__input-card-img" name="card-image" type="file" accept="image/png, image/jpeg">
+              <input class="popup__input-card-text" name="card-title" type="text" placeholder="Введите имя" required
+                minlength="2" maxlength="30" value="">
+              <input class="popup__input-card-text" name="card-description" type="text" placeholder="Введите описание" required
+                minlength="2" maxlength="100" value="">
+            </form>
+          </li>
+          <li class="popup__card">
+            <form class="popup__card-form">
+              <input class="popup__input-card-img" name="card-image" type="file" accept="image/png, image/jpeg">
+              <input class="popup__input-card-text" name="card-title" type="text" placeholder="Введите имя" required
+                minlength="2" maxlength="30" value="">
+              <input class="popup__input-card-text" name="card-description" type="text" placeholder="Введите описание" required
+                minlength="2" maxlength="100" value="">
+            </form>
+          </li>
+          <li class="popup__card">
+            <form class="popup__card-form">
+              <input class="popup__input-card-img" name="card-image" type="file" accept="image/png, image/jpeg">
+              <input class="popup__input-card-text" name="card-title" type="text" placeholder="Введите имя" required
+                minlength="2" maxlength="30" value="">
+              <input class="popup__input-card-text" name="card-description" type="text" placeholder="Введите описание" required
+                minlength="2" maxlength="100" value="">
+            </form>
+          </li>
+          <li class="popup__card">
+            <form class="popup__card-form">
+              <input class="popup__input-card-img" name="card-image" type="file" accept="image/png, image/jpeg">
+              <input class="popup__input-card-text" name="card-title" type="text" placeholder="Введите имя" required
+                minlength="2" maxlength="30" value="">
+              <input class="popup__input-card-text" name="card-description" type="text" placeholder="Введите описание" required
+                minlength="2" maxlength="100" value="">
+            </form>
+          </li>
+          <li class="popup__card">
+            <form class="popup__card-form">
+              <input class="popup__input-card-img" name="card-image" type="file" accept="image/png, image/jpeg">
+              <input class="popup__input-card-text" name="card-title" type="text" placeholder="Введите имя" required
+                minlength="2" maxlength="30" value="">
+              <input class="popup__input-card-text" name="card-description" type="text" placeholder="Введите описание" required
+                minlength="2" maxlength="100" value="">
+            </form>
+          </li>
+          <li class="popup__card">
+            <form class="popup__card-form">
+              <input class="popup__input-card-img" name="card-image" type="file" accept="image/png, image/jpeg">
+              <input class="popup__input-card-text" name="card-title" type="text" placeholder="Введите имя" required
+                minlength="2" maxlength="30" value="">
+              <input class="popup__input-card-text" name="card-description" type="text" placeholder="Введите описание" required
+                minlength="2" maxlength="100" value="">
+            </form>
+          </li>
+        </ul>
+
+        <button class="popup__add-submit-button" type="submit">Создать</button>
+      </div>
+    </div>
   </div>
 </body>
 </html>

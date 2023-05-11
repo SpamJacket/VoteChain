@@ -1,0 +1,37 @@
+.popup__profile-button {
+  width: 300px;
+  min-height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 1;
+  transition: ease-out .3s opacity;
+}
+
+.popup__profile-button:hover {
+  opacity: .7;
+}
+
+@media screen and (max-width: 768px) {
+  .popup__profile-button {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 524px) {
+  .popup__profile-button {
+    width: 240px;
+    min-height: 30px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .popup__profile-button {
+    width: 200px;
+    min-height: 30px;
+  }
+}

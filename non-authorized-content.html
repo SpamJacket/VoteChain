@@ -16,7 +16,7 @@
   <div class="page">
     <header class="header">
       <form class="header__form">
-        <input class="header__search" placeholder="Поиск">
+        <input class="header__search" name="search" type="text" placeholder="Поиск">
       </form>
       <nav class="header__links">
         <a class="header__link" href="#">Регистрация</a>
@@ -55,6 +55,83 @@
         <h2 class="content__title">Какой фрукт вкуснее?</h2>
       </article>
     </main>
+
+    <div class="popup popup_type_sign-up">
+      <div class="popup__container-login">
+        <h3 class="popup__title-login">Регистрация</h3>
+        <form class="popup__form">
+          <input class="popup__input" name="login-sign-up" type="text" placeholder="Введите логин" required
+            minlength="2" maxlength="30" value="">
+          <input class="popup__input" name="password-sign-up" type="password" placeholder="Введите пароль" required
+            minlength="8" maxlength="40"value="">
+          <button class="popup__submit-button" type="submit">Зарегестрироваться</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup_type_log-in popup_opened">
+      <div class="popup__container-login">
+        <h3 class="popup__title-login">Вход</h3>
+        <form class="popup__form">
+          <input class="popup__input" name="login" type="text" placeholder="Введите логин" required
+            minlength="2" maxlength="30" value="">
+          <input class="popup__input" name="password" type="password" placeholder="Введите пароль" required
+            minlength="8" maxlength="40"value="">
+          <button class="popup__submit-button" type="submit">Войти</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup_type_contest">
+      <div class="popup__container">
+        <button class="popup__button" type="button" aria-label="Кнопка закрытия"></button>
+
+        <div class="popup__info">
+          <img class="popup__image" src="./images/fruits.png" alt="Фрукты">
+          <h3 class="popup__title">Какой фрукт вкуснее?</h3>
+          <p class="popup__text">В этом голосовании соревнуются грейпфрут, апельсин, киви и виноград за звание лучшего фрукта.</p>
+        </div>
+
+        <ul class="popup__card-list">
+          <li class="popup__card">
+            <img class="popup__card-img" src="./images/fruits.png" alt="Апельсин">
+            <h4 class="popup__card-title">Апельсин</h4>
+            <p class="popup__card-description">Ораньжевый фрукт</p>
+            <button class="popup__like" type="button" aria-label="Лайк">
+          </li>
+          <li class="popup__card">
+            <img class="popup__card-img" src="./images/fruits.png" alt="Грейпфрут">
+            <h4 class="popup__card-title">Грейпфрут</h4>
+            <p class="popup__card-description">Красный фрукт</p>
+            <button class="popup__like" type="button" aria-label="Лайк"></button>
+          </li>
+          <li class="popup__card">
+            <img class="popup__card-img" src="./images/fruits.png" alt="Киви">
+            <h4 class="popup__card-title">Киви</h4>
+            <p class="popup__card-description">Зеленый фрукт</p>
+            <button class="popup__like" type="button" aria-label="Лайк"></button>
+          </li>
+          <li class="popup__card">
+            <img class="popup__card-img" src="./images/fruits.png" alt="Виноград">
+            <h4 class="popup__card-title">Виноград</h4>
+            <p class="popup__card-description">Фиолетовый фрукт</p>
+            <button class="popup__like" type="button" aria-label="Лайк"></button>
+          </li>
+          <li class="popup__card">
+            <img class="popup__card-img" src="./images/fruits.png" alt="Апельсин">
+            <h4 class="popup__card-title">Апельсин</h4>
+            <p class="popup__card-description">Ораньжевый фрукт</p>
+            <button class="popup__like" type="button" aria-label="Лайк">
+          </li>
+          <li class="popup__card">
+            <img class="popup__card-img" src="./images/fruits.png" alt="Грейпфрут">
+            <h4 class="popup__card-title">Грейпфрут</h4>
+            <p class="popup__card-description">Красный фрукт</p>
+            <button class="popup__like" type="button" aria-label="Лайк"></button>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </body>
 </html>

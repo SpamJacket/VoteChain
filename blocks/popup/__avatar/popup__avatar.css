@@ -1,0 +1,23 @@
+.popup__avatar {
+  width: 201px;
+}
+
+.popup__avatar::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.popup__avatar::before {
+  content: 'Выберите фото';
+  display: inline-block;
+  width: 180px;
+  text-align: center;
+  border: 3px #e7e0e03b solid;
+  border-radius: 3px;
+  padding: 5px 8px;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(255, 255, 255, .7);
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+}
