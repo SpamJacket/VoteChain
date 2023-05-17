@@ -8,7 +8,7 @@
   width: 85%;
   background-color: #141B33;
   border-radius: 10px;
-  height: 90vh;
+  max-height: 90vh;
   overflow: auto;
   padding: 54px 54px 30px;
   max-width: 968px;

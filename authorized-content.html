@@ -27,41 +27,11 @@
     </header>
 
     <main class="content">
-      <article class="content__card">
-        <button class="button button_type_favourite" type="button" aria-label="Кнопка избранного"></button>
+      <!-- <article class="content__card">
+        <button class="button button_type_settings" type="button" aria-label="Кнопка редактирования конкурса"></button>
         <img class="content__image" src="./images/fruits.png" alt="Фрукты">
         <h2 class="content__title">Какой фрукт вкуснее?</h2>
-      </article>
-
-      <article class="content__card">
-        <button class="button button_type_favourite" type="button" aria-label="Кнопка избранного"></button>
-        <img class="content__image" src="./images/fruits.png" alt="Фрукты">
-        <h2 class="content__title">Какой фрукт вкуснее?</h2>
-      </article>
-
-      <article class="content__card">
-        <button class="button button_type_settings" type="button" aria-label="Кнопка редактирования"></button>
-        <img class="content__image" src="./images/fruits.png" alt="Фрукты">
-        <h2 class="content__title">Какой фрукт вкуснее?</h2>
-      </article>
-
-      <article class="content__card">
-        <button class="button button_type_favourite" type="button" aria-label="Кнопка избранного"></button>
-        <img class="content__image" src="./images/fruits.png" alt="Фрукты">
-        <h2 class="content__title">Какой фрукт вкуснее?</h2>
-      </article>
-
-      <article class="content__card">
-        <button class="button button_type_settings" type="button" aria-label="Кнопка редактирования"></button>
-        <img class="content__image" src="./images/fruits.png" alt="Фрукты">
-        <h2 class="content__title">Какой фрукт вкуснее?</h2>
-      </article>
-      
-      <article class="content__card">
-        <button class="button button_type_settings" type="button" aria-label="Кнопка редактирования"></button>
-        <img class="content__image" src="./images/fruits.png" alt="Фрукты">
-        <h2 class="content__title">Какой фрукт вкуснее?</h2>
-      </article>
+      </article> -->
     </main>
 
     <div class="popup popup_type_contest">
@@ -75,48 +45,13 @@
         </div>
 
         <ul class="popup__card-list">
-          <li class="popup__card">
-            <img class="popup__card-img" src="./images/fruits.png" alt="Апельсин">
-            <h4 class="popup__card-title">Апельсин</h4>
-            <p class="popup__card-description">Ораньжевый фрукт</p>
-            <button class="popup__like" type="button" aria-label="Лайк"></button>
-            <p class="popup__counter">0</p>
-          </li>
-          <li class="popup__card">
+          <!-- <li class="popup__card">
             <img class="popup__card-img" src="./images/fruits.png" alt="Грейпфрут">
             <h4 class="popup__card-title">Грейпфрут</h4>
             <p class="popup__card-description">Красный фрукт</p>
             <button class="popup__like" type="button" aria-label="Лайк"></button>
             <p class="popup__counter">0</p>
-          </li>
-          <li class="popup__card">
-            <img class="popup__card-img" src="./images/fruits.png" alt="Киви">
-            <h4 class="popup__card-title">Киви</h4>
-            <p class="popup__card-description">Зеленый фрукт</p>
-            <button class="popup__like" type="button" aria-label="Лайк"></button>
-            <p class="popup__counter">0</p>
-          </li>
-          <li class="popup__card">
-            <img class="popup__card-img" src="./images/fruits.png" alt="Виноград">
-            <h4 class="popup__card-title">Виноград</h4>
-            <p class="popup__card-description">Фиолетовый фрукт</p>
-            <button class="popup__like" type="button" aria-label="Лайк"></button>
-            <p class="popup__counter">0</p>
-          </li>
-          <li class="popup__card">
-            <img class="popup__card-img" src="./images/fruits.png" alt="Апельсин">
-            <h4 class="popup__card-title">Апельсин</h4>
-            <p class="popup__card-description">Ораньжевый фрукт</p>
-            <button class="popup__like" type="button" aria-label="Лайк"></button>
-            <p class="popup__counter">0</p>
-          </li>
-          <li class="popup__card">
-            <img class="popup__card-img" src="./images/fruits.png" alt="Грейпфрут">
-            <h4 class="popup__card-title">Грейпфрут</h4>
-            <p class="popup__card-description">Красный фрукт</p>
-            <button class="popup__like" type="button" aria-label="Лайк"></button>
-            <p class="popup__counter">0</p>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
@@ -127,74 +62,57 @@
 
         <form class="popup__info-settings">
           <input class="popup__input-info-img" name="image" type="file" accept="image/png, image/jpeg">
-          <input class="popup__input-info-text" name="contest-title" type="text" placeholder="Введите название" required
+          <input class="popup__input-info-text popup__input-info-text-title" name="contest-title" type="text" placeholder="Введите название" required
             minlength="2" maxlength="100" value="">
-          <textarea class="popup__input-info-text" name="contest-description" placeholder="Введите описание" required
+          <textarea class="popup__input-info-text popup__input-info-text-subtitle" name="contest-description" placeholder="Введите описание" required
           minlength="2" maxlength="512" value=""></textarea>
         </form>
 
         <button class="popup__add-button" type="button" aria-label="Добавить конкурс"></button>
         
         <ul class="popup__card-list">
-          <li class="popup__card">
+          <!-- <li class="popup__card">
             <form class="popup__card-form">
               <input class="popup__input-card-img" name="card-image" type="file" accept="image/png, image/jpeg">
-              <input class="popup__input-card-text" name="card-title" type="text" placeholder="Введите имя" required
+              <input class="popup__input-card-text popup__input-card-text-title" name="card-title" type="text" placeholder="Введите имя" required
                 minlength="2" maxlength="30" value="">
-              <input class="popup__input-card-text" name="card-description" type="text" placeholder="Введите описание" required
+              <input class="popup__input-card-text popup__input-card-text-subtitle" name="card-description" type="text" placeholder="Введите описание" required
                 minlength="2" maxlength="100" value="">
             </form>
-          </li>
-          <li class="popup__card">
-            <form class="popup__card-form">
-              <input class="popup__input-card-img" name="card-image" type="file" accept="image/png, image/jpeg">
-              <input class="popup__input-card-text" name="card-title" type="text" placeholder="Введите имя" required
-                minlength="2" maxlength="30" value="">
-              <input class="popup__input-card-text" name="card-description" type="text" placeholder="Введите описание" required
-                minlength="2" maxlength="100" value="">
-            </form>
-          </li>
-          <li class="popup__card">
-            <form class="popup__card-form">
-              <input class="popup__input-card-img" name="card-image" type="file" accept="image/png, image/jpeg">
-              <input class="popup__input-card-text" name="card-title" type="text" placeholder="Введите имя" required
-                minlength="2" maxlength="30" value="">
-              <input class="popup__input-card-text" name="card-description" type="text" placeholder="Введите описание" required
-                minlength="2" maxlength="100" value="">
-            </form>
-          </li>
-          <li class="popup__card">
-            <form class="popup__card-form">
-              <input class="popup__input-card-img" name="card-image" type="file" accept="image/png, image/jpeg">
-              <input class="popup__input-card-text" name="card-title" type="text" placeholder="Введите имя" required
-                minlength="2" maxlength="30" value="">
-              <input class="popup__input-card-text" name="card-description" type="text" placeholder="Введите описание" required
-                minlength="2" maxlength="100" value="">
-            </form>
-          </li>
-          <li class="popup__card">
-            <form class="popup__card-form">
-              <input class="popup__input-card-img" name="card-image" type="file" accept="image/png, image/jpeg">
-              <input class="popup__input-card-text" name="card-title" type="text" placeholder="Введите имя" required
-                minlength="2" maxlength="30" value="">
-              <input class="popup__input-card-text" name="card-description" type="text" placeholder="Введите описание" required
-                minlength="2" maxlength="100" value="">
-            </form>
-          </li>
-          <li class="popup__card">
-            <form class="popup__card-form">
-              <input class="popup__input-card-img" name="card-image" type="file" accept="image/png, image/jpeg">
-              <input class="popup__input-card-text" name="card-title" type="text" placeholder="Введите имя" required
-                minlength="2" maxlength="30" value="">
-              <input class="popup__input-card-text" name="card-description" type="text" placeholder="Введите описание" required
-                minlength="2" maxlength="100" value="">
-            </form>
-          </li>
+          </li> -->
         </ul>
 
-        <button class="popup__add-submit-button" type="submit">Создать</button>
+        <button class="popup__add-submit-button" type="button" aria-label="Кнопка сохранения">Сохранить</button>
       </div>
     </div>
   </div>
+  <template id="content-card">
+    <article class="content__card">
+      <button class="button" type="button" aria-label=""></button>
+      <img class="content__image">
+      <h2 class="content__title"></h2>
+    </article>
+  </template>
+  <template id="popup-card">
+    <li class="popup__card">
+      <img class="popup__card-img" src="" alt="">
+      <h4 class="popup__card-title"></h4>
+      <p class="popup__card-description"></p>
+      <button class="popup__like" type="button" aria-label="Лайк">
+      <p class="popup__counter"></p>
+    </li>
+  </template>
+  <template id="popup-card-settings">
+    <li class="popup__card">
+      <form class="popup__card-form">
+        <input class="popup__input-card-img" name="card-image" type="file" accept="image/png, image/jpeg">
+        <input class="popup__input-card-text popup__input-card-text-title" name="card-title" type="text" placeholder="Введите имя" required
+          minlength="2" maxlength="30" value="">
+        <input class="popup__input-card-text popup__input-card-text-subtitle" name="card-description" type="text" placeholder="Введите описание" required
+          minlength="2" maxlength="100" value="">
+      </form>
+    </li>
+  </template>
+  <script src="./authorized-content.js"></script>
 </body>
 </html>

@@ -1,12 +1,15 @@
-.header__link {
+.header__link_type_button {
   color: rgba(255, 255, 255, 0.71);
-  text-decoration: none;
+  border: none;
+  padding: 0;
   font-weight: 500;
   font-size: 24px;
   transition: color .3s ease-out;
+  background-color: transparent;
+  cursor: pointer;
   outline: none;
 }
 
-.header__link:hover {
+.header__link_type_button:hover {
   color: #fff;
 }
