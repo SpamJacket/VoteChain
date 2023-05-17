@@ -15,12 +15,21 @@ const popupSettingsAddButton = contestSettingsPopup.querySelector('.popup__add-b
 const popupSettingsCardList = contestSettingsPopup.querySelector('.popup__card-list');
 const popupSettingsSubmitButton = contestSettingsPopup.querySelector('.popup__add-submit-button');
 
+const profile = page.querySelector('.profile');
+const profileAvatar = profile.querySelector('.profile__avatar');
+const profileName = profile.querySelector('.profile__name');
+const profileDescription = profile.querySelector('.profile__description');
+const profileButton = profile.querySelector('.button');
+
+const profilePopup = page.querySelector('.popup_type_profile');
+const popupProfileAvatar = profilePopup.querySelector('.popup__avatar');
+const popupProfileName = profilePopup.querySelector('.popup__input_type_name');
+const popupProfileDescription = profilePopup.querySelector('.popup__input_type_description');
+const popupProfileButton = profilePopup.querySelector('.popup__profile-button');
+
+const createButton = page.querySelector('.header__create-button');
+
 const closeButtons = Array.from(page.querySelectorAll('.popup__button'));
-
-const searchForm = page.querySelector('.header__form');
-const searchInput = searchForm.querySelector('.header__search');
-
-// Открытие и закрытие попапов
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
@@ -50,13 +59,53 @@ contestSettingsPopup.addEventListener('mousedown', evt => {
   }
 });
 
+profilePopup.addEventListener('mousedown', evt => {
+  if(evt.target === evt.currentTarget) {
+    closePopup(profilePopup);
+  }
+});
+
 closeButtons.forEach(button => {
   button.addEventListener('click', () => {
     closePopup(button.closest('.popup'));
   })
 });
 
+// Рендер профиля
+
+function renderProfile() {
+  const profile = JSON.parse(localStorage.getItem('data__' + localStorage.getItem('user').slice(7)));
+
+  profileAvatar.src = profile.image;
+  profileName.textContent = profile.name;
+  profileDescription.textContent = profile.description;
+}
+
+renderProfile();
+
 // Рендер конкурсов
+
+function submitCreate() {
+  const card = {
+    owner: localStorage.getItem('user'),
+    image: './images/' + popupSettingsImage.value.match(/[a-zA-Z]{1,}\.[a-zA-Z]{1,}/)[0],
+    cardTitle: popupSettingsTitle.value,
+    subtitle: popupSettingsSubtitle.value,
+    favourites: [],
+    applicants: Array.from(popupSettingsCardList.querySelectorAll('.popup__card')).map(applicant => {
+      return {
+        img: './images/' + applicant.querySelector('.popup__input-card-img').value.match(/[a-zA-Z]{1,}\.[a-zA-Z]{1,}/)[0],
+        name: applicant.querySelector('.popup__input-card-text-title').value,
+        description: applicant.querySelector('.popup__input-card-text-subtitle').value,
+        likes: applicant.querySelector('.popup__input-card-text-title').likes
+      };
+    })
+  };
+
+  localStorage.setItem('card__' + card.cardTitle, JSON.stringify(card));
+  renderImages();
+  closePopup(contestSettingsPopup);
+}
 
 popupSettingsAddButton.addEventListener('click', () => {
   const cardElement = document.querySelector('#popup-card-settings').content.cloneNode(true);
@@ -67,22 +116,13 @@ popupSettingsAddButton.addEventListener('click', () => {
   popupSettingsCardList.append(cardElement);
 });
 
-function renderImages(searchInputValue = '') {
+function renderImages() {
   let cardsLocalStorage = [];
   for(let i = 0; i < localStorage.length; i++) {
     if(localStorage.key(i).startsWith('card__')) {
       cardsLocalStorage.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
     }
   }
-  cardsLocalStorage = cardsLocalStorage.map(card => {
-    if(card.cardTitle.toLowerCase().includes(searchInputValue.toLowerCase())) {
-      return card;
-    } else {
-      return '';
-    }
-  }).filter(el => {
-    return (el != "");
-  })
   
   content.innerHTML = '';
 
@@ -102,15 +142,7 @@ function renderImages(searchInputValue = '') {
     cardImage.src = cardImage.image;
     cardImage.alt = cardImage.cardTitle;
     cardTitle.textContent = cardImage.cardTitle;
-
-    if(cardImage.owner !== localStorage.getItem('user')) {
-      cardButton.classList.add('button_type_favourite');
-      if(cardImage.favourites.includes(localStorage.getItem('user'))) {
-        cardButton.style = 'background-image: url("../../../../../images/favourite-active.svg");';
-      }
-    } else {
-      cardButton.classList.add('button_type_settings');
-    }
+    cardButton.classList.add('button_type_settings');
   
     content.append(cardElement);
   });
@@ -120,67 +152,68 @@ function renderImages(searchInputValue = '') {
     const cardImage = card.querySelector('.content__image');
     const cardTitle = card.querySelector('.content__title');
 
-    if(cardButton.classList.contains('button_type_favourite')){
-      cardButton.addEventListener('click', () => {
-        if(!cardImage.favourites.includes(localStorage.getItem('user'))) {
-          cardButton.style = 'background-image: url("../../../../../images/favourite-active.svg");';
-          cardImage.favourites.push(localStorage.getItem('user'));
-          localStorage.setItem('card__' + cardImage.cardTitle, JSON.stringify(cardImage));
-        } else {
-          cardButton.style = 'background-image: url("../../../../../images/favourite.svg");';
-          cardImage.favourites = cardImage.favourites.filter(user => user !== localStorage.getItem('user'));
-          localStorage.setItem('card__' + cardImage.cardTitle, JSON.stringify(cardImage));
-        }
+    function submitSave() {   
+      cardImage.image = './images/' + popupSettingsImage.value.match(/[a-zA-Z]{1,}\.[a-zA-Z]{1,}/)[0];
+      cardImage.cardTitle = popupSettingsTitle.value;
+      cardImage.subtitle = popupSettingsSubtitle.value;
+      cardImage.applicants = Array.from(popupSettingsCardList.querySelectorAll('.popup__card')).map(applicant => {
+        return {
+          img: './images/' + applicant.querySelector('.popup__input-card-img').value.match(/[a-zA-Z]{1,}\.[a-zA-Z]{1,}/)[0],
+          name: applicant.querySelector('.popup__input-card-text-title').value,
+          description: applicant.querySelector('.popup__input-card-text-subtitle').value,
+          likes: applicant.querySelector('.popup__input-card-text-title').likes
+        };
       });
-    } else {
-      cardButton.addEventListener('click', () => {
-        openPopup(contestSettingsPopup);
 
-        popupSettingsTitle.image = cardImage.image;
-        popupSettingsTitle.value = cardImage.cardTitle;
-        popupSettingsSubtitle.value = cardImage.subtitle;
+      cardImage.src = cardImage.image;
+      cardImage.alt = cardImage.cardTitle;
+      cardTitle.textContent = cardImage.cardTitle;
 
-        popupSettingsCardList.innerHTML = '';
+      localStorage.removeItem('card__' + cardImage.cardTitle);
+      localStorage.setItem('card__' + cardImage.cardTitle, JSON.stringify(cardImage));
 
-        cardImage.applicants.forEach(applicant => {
-          const cardElement = document.querySelector('#popup-card-settings').content.cloneNode(true);
-          const cardName = cardElement.querySelector('.popup__input-card-text-title');
-          const cardDescription = cardElement.querySelector('.popup__input-card-text-subtitle');
-
-          cardName.img = applicant.img;
-          cardName.value = applicant.name;
-          cardDescription.value = applicant.description;
-          cardName.likes = applicant.likes;
-
-          popupSettingsCardList.append(cardElement);
-        });
-
-        popupSettingsSubmitButton.addEventListener('click', () => {
-          localStorage.removeItem('card__' + cardImage.cardTitle);
-          
-          cardImage.image = './images/' + popupSettingsImage.value.match(/[a-zA-Z]{1,}\.[a-zA-Z]{1,}/)[0];
-          cardImage.cardTitle = popupSettingsTitle.value;
-          cardImage.subtitle = popupSettingsSubtitle.value;
-          cardImage.applicants = Array.from(popupSettingsCardList.querySelectorAll('.popup__card')).map(applicant => {
-            return {
-              img: './images/' + applicant.querySelector('.popup__input-card-img').value.match(/[a-zA-Z]{1,}\.[a-zA-Z]{1,}/)[0],
-              name: applicant.querySelector('.popup__input-card-text-title').value,
-              description: applicant.querySelector('.popup__input-card-text-subtitle').value,
-              likes: applicant.querySelector('.popup__input-card-text-title').likes
-            };
-          });
-
-          cardImage.src = cardImage.image;
-          cardImage.alt = cardImage.cardTitle;
-          cardTitle.textContent = cardImage.cardTitle;
-
-          localStorage.setItem('card__' + cardImage.cardTitle, JSON.stringify(cardImage));
-
-          closePopup(contestSettingsPopup);
-        });
-      });
+      closePopup(contestSettingsPopup);
     }
 
+    cardButton.addEventListener('click', () => {
+      openPopup(contestSettingsPopup);
+      popupSettingsSubmitButton.textContent = 'Сохранить';
+
+      popupSettingsTitle.image = cardImage.image;
+      popupSettingsTitle.value = cardImage.cardTitle;
+      popupSettingsSubtitle.value = cardImage.subtitle;
+
+      popupSettingsCardList.innerHTML = '';
+      popupSettingsSubmitButton.removeEventListener('click', submitCreate);
+
+      cardImage.applicants.forEach(applicant => {
+        const cardElement = document.querySelector('#popup-card-settings').content.cloneNode(true);
+        const cardName = cardElement.querySelector('.popup__input-card-text-title');
+        const cardDescription = cardElement.querySelector('.popup__input-card-text-subtitle');
+
+        cardName.img = applicant.img;
+        cardName.value = applicant.name;
+        cardDescription.value = applicant.description;
+        cardName.likes = applicant.likes;
+
+        popupSettingsCardList.append(cardElement);
+      });
+      
+      popupSettingsSubmitButton.addEventListener('click', submitSave);
+    });
+
+    createButton.addEventListener('click', () => {
+      openPopup(contestSettingsPopup);
+      popupSettingsSubmitButton.textContent = 'Создать';
+    
+      popupSettingsTitle.value = '';
+      popupSettingsSubtitle.value = '';
+      popupSettingsCardList.innerHTML = '';
+      popupSettingsSubmitButton.removeEventListener('click', submitSave);
+    
+      popupSettingsSubmitButton.addEventListener('click', submitCreate);
+    });
+  
     cardImage.addEventListener('click', () => {
       openPopup(contestPopup);
   
@@ -232,26 +265,25 @@ function renderImages(searchInputValue = '') {
 
 renderImages();
 
-// Поиск
+// Редактирование профиля
 
-function searchFunc(evt) {
-  searchForm.addEventListener('submit', evt => {
-    evt.preventDefault();
-    
-    if(searchInput.contains(evt.relatedTarget)) {
-      return;
-    } else {
-      renderImages(searchInput.value);
-    }
-  });
-  
-  searchInput.addEventListener('focusout', evt => {
-    if(searchInput.contains(evt.relatedTarget)) {
-      return;
-    } else {
-      renderImages(searchInput.value);
-    }
-  });
-}
+profileButton.addEventListener('click', () => {
+  openPopup(profilePopup);
 
-searchFunc();
+  popupProfileAvatar.image = profileAvatar.src;
+  popupProfileName.value = profileName.textContent;
+  popupProfileDescription.value = profileDescription.textContent;
+
+  popupProfileButton.addEventListener('click', () => {
+    const profile = {
+      image: './images/' + popupProfileAvatar.value.match(/[a-zA-Z]{1,}\.[a-zA-Z]{1,}/)[0],
+      name: popupProfileName.value,
+      description: popupProfileDescription.value
+    };
+
+    localStorage.setItem('data__' + localStorage.getItem('user').slice(7), JSON.stringify(profile));
+
+    renderProfile();
+    closePopup(profilePopup);
+  });
+});
