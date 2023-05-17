@@ -1,8 +1,8 @@
 .popup__card-description {
   margin: 0;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 12px;
   line-height: 20px;
-  height: 40px;
   text-align: center;
+  min-height: 60px;
 }

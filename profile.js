@@ -127,24 +127,26 @@ function renderImages() {
   content.innerHTML = '';
 
   cardsLocalStorage.forEach(card => {
-    const cardElement = document.querySelector('#content-card').content.cloneNode(true);
-    const cardImage = cardElement.querySelector('.content__image');
-    const cardTitle = cardElement.querySelector('.content__title');
-    const cardButton = cardElement.querySelector('.button');
+    if(card.owner === localStorage.getItem('user')) {
+      const cardElement = document.querySelector('#content-card').content.cloneNode(true);
+      const cardImage = cardElement.querySelector('.content__image');
+      const cardTitle = cardElement.querySelector('.content__title');
+      const cardButton = cardElement.querySelector('.button');
+    
+      cardImage.owner = card.owner;
+      cardImage.image = card.image;
+      cardImage.cardTitle = card.cardTitle;
+      cardImage.subtitle = card.subtitle;
+      cardImage.favourites = card.favourites;
+      cardImage.applicants = card.applicants;
   
-    cardImage.owner = card.owner;
-    cardImage.image = card.image;
-    cardImage.cardTitle = card.cardTitle;
-    cardImage.subtitle = card.subtitle;
-    cardImage.favourites = card.favourites;
-    cardImage.applicants = card.applicants;
-
-    cardImage.src = cardImage.image;
-    cardImage.alt = cardImage.cardTitle;
-    cardTitle.textContent = cardImage.cardTitle;
-    cardButton.classList.add('button_type_settings');
-  
-    content.append(cardElement);
+      cardImage.src = cardImage.image;
+      cardImage.alt = cardImage.cardTitle;
+      cardTitle.textContent = cardImage.cardTitle;
+      cardButton.classList.add('button_type_settings');
+    
+      content.append(cardElement);
+    }
   });
 
   Array.from(page.querySelectorAll('.content__card')).forEach(card => {

@@ -11,6 +11,9 @@
   opacity: 1;
   transition: ease-out .2s opacity;
   cursor: pointer;
+  position: absolute;
+  left: 75px;
+  bottom: 15px;
 }
 
 .popup__like:hover {

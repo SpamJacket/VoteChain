@@ -205,3 +205,316 @@ loginForm.addEventListener('submit', evt => {
     window.location.href = './authorized-content.html';
   }
 });
+
+// const initCards = [
+//   {
+//     owner: 'login__Лиза',
+//     image: './images/country.jpg',
+//     cardTitle: 'Лучшая страна для релокации из России в 2023 году',
+//     subtitle: 'Конкурс для перспективных ИТ-специалистов на определение самой приятной для релаксации страны',
+//     favourites: [],
+//     applicants: [
+//       {
+//         img: './images/spain.jpg',
+//         name: 'Испания',
+//         description: 'Яркая солнечная страна',
+//         likes: []
+//       },
+//       {
+//         img: './images/usa.jpg',
+//         name: 'США',
+//         description: 'Высокотехнологичная держава',
+//         likes: []
+//       },
+//       {
+//         img: './images/georgia.jpg',
+//         name: 'Грузия',
+//         description: 'Страна с богатой культурой',
+//         likes: []
+//       }
+//     ]
+//   },
+//   {
+//     owner: 'login__Лиза',
+//     image: './images/pomegranate.jpg',
+//     cardTitle: 'Какой гранатовый сок лучше?',
+//     subtitle: 'Конкурс на выбор самого лучшего в соотношении цена-качества сока',
+//     favourites: [],
+//     applicants: [
+//       {
+//         img: './images/ayat.jpg',
+//         name: 'AYAT',
+//         description: 'Без сахара и консервантов',
+//         likes: []
+//       },
+//       {
+//         img: './images/rich.jpg',
+//         name: 'RICH',
+//         description: 'Бюджетный вариант, есть сахар',
+//         likes: []
+//       },
+//       {
+//         img: './images/nar.jpg',
+//         name: 'NAR',
+//         description: 'Самый дорогой, хороший состав',
+//         likes: []
+//       }
+//     ]
+//   },
+//   {
+//     owner: 'login__Ксюша',
+//     image: './images/fruits.png',
+//     cardTitle: 'Лучший фрукт',
+//     subtitle: 'Настало время наконец определить самый вкусный и сочный фрукт всея Руси!',
+//     favourites: [],
+//     applicants: [
+//       {
+//         img: './images/orange.jpg',
+//         name: 'Апельсин',
+//         description: 'Сладко-кислый, сложно чистить',
+//         likes: []
+//       },
+//       {
+//         img: './images/banana.jpg',
+//         name: 'Банан',
+//         description: 'Сладкий, быстро чистить',
+//         likes: []
+//       },
+//       {
+//         img: './images/apple.jpg',
+//         name: 'Яблоко',
+//         description: 'Сладкое или может и кислое',
+//         likes: []
+//       },
+//       {
+//         img: './images/mandarin.jpg',
+//         name: 'Мандарин',
+//         description: 'Сладкий, под новый год, сочный',
+//         likes: []
+//       },
+//       {
+//         img: './images/peach.jpg',
+//         name: 'Персик',
+//         description: 'Сочный, сладкий, неудобно есть',
+//         likes: []
+//       }
+//     ]
+//   },
+//   {
+//     owner: 'login__Ксюша',
+//     image: './images/vegetables.jpg',
+//     cardTitle: 'Лучший овощь',
+//     subtitle: 'Ну что, готовы выбрать самый топовый овощь?',
+//     favourites: [],
+//     applicants: [
+//       {
+//         img: './images/kapusta.jpg',
+//         name: 'Капуста',
+//         description: 'Большое содержание витаминов',
+//         likes: []
+//       },
+//       {
+//         img: './images/luk.jpg',
+//         name: 'Лук',
+//         description: 'Противовирусное средство',
+//         likes: []
+//       },
+//       {
+//         img: './images/shpinat.jpg',
+//         name: 'Шпинат',
+//         description: 'Благоприятно влияет',
+//         likes: []
+//       },
+//       {
+//         img: './images/patato.jpg',
+//         name: 'Картофель',
+//         description: 'Плюс инсулин и глюкоза в крови',
+//         likes: []
+//       },
+//       {
+//         img: './images/tomato.jpg',
+//         name: 'Томаты',
+//         description: 'Очень полезны',
+//         likes: []
+//       },
+//       {
+//         img: './images/cucumber.jpg',
+//         name: 'Огурец',
+//         description: 'Много клетчатки. На 90% вода',
+//         likes: []
+//       },
+//       {
+//         img: './images/selderey.jpg',
+//         name: 'Сельдерей',
+//         description: 'Противоопухолевыми средство',
+//         likes: []
+//       }
+//     ]
+//   },
+//   {
+//     owner: 'login__Даша',
+//     image: './images/present.jpg',
+//     cardTitle: 'Ваш любимый праздник в году',
+//     subtitle: 'Что может быть лучше праздников и выходных? Только ваш любимый праздник. Посмотрим же что наши пользователи предпочитают больше всего',
+//     favourites: [],
+//     applicants: [
+//       {
+//         img: './images/birthday.jpg',
+//         name: 'День рождения',
+//         description: '',
+//         likes: []
+//       },
+//       {
+//         img: './images/febrary23.jpg',
+//         name: '23 февраля',
+//         description: '',
+//         likes: []
+//       },
+//       {
+//         img: './images/march8.jpg',
+//         name: '8 марта',
+//         description: '',
+//         likes: []
+//       },
+//       {
+//         img: './images/may1.jpg',
+//         name: 'День труда',
+//         description: '',
+//         likes: []
+//       },
+//       {
+//         img: './images/newyear.jpg',
+//         name: 'Новый год',
+//         description: '',
+//         likes: []
+//       }
+//     ]
+//   },
+//   {
+//     owner: 'login__Даша',
+//     image: './images/nikes.jpg',
+//     cardTitle: 'Какой ваш любимый бренд спортивной обуви?',
+//     subtitle: 'Исследование рассчитанное на получение статистики по популярности в России современных брендов обуви!',
+//     favourites: [],
+//     applicants: [
+//       {
+//         img: './images/nike.jpg',
+//         name: 'Nike',
+//         description: 'Американское качество',
+//         likes: []
+//       },
+//       {
+//         img: './images/puma.jpg',
+//         name: 'Puma',
+//         description: 'Топ 3 в мире спортивной одежды',
+//         likes: []
+//       },
+//       {
+//         img: './images/newbalance.jpg',
+//         name: 'New Balance',
+//         description: 'Опытнейший производитель',
+//         likes: []
+//       },
+//       {
+//         img: './images/adidas.jpg',
+//         name: 'Adidas',
+//         description: 'Немецкое качество',
+//         likes: []
+//       }
+//     ]
+//   },
+//   {
+//     owner: 'login__Саша',
+//     image: './images/marks.png',
+//     cardTitle: 'Худший производитель автомобилей',
+//     subtitle: 'На рынке автомобилей огромное количество разных качественных марок, которые зарекомендовали себя за долгие годы упорной работы. Но среди них есть и недобросовестные производители.',
+//     favourites: [],
+//     applicants: [
+//       {
+//         img: './images/suzuki.png',
+//         name: 'Suzuki',
+//         description: '',
+//         likes: []
+//       },
+//       {
+//         img: './images/jeep.png',
+//         name: 'Jeep',
+//         description: '',
+//         likes: []
+//       },
+//       {
+//         img: './images/mini.png',
+//         name: 'MINI',
+//         description: '',
+//         likes: []
+//       },
+//       {
+//         img: './images/chevrolet.png',
+//         name: 'Chevrolet',
+//         description: '',
+//         likes: []
+//       }
+//     ]
+//   },
+//   {
+//     owner: 'login__Саша',
+//     image: './images/banks.jpg',
+//     cardTitle: 'Лучший кэшбек за покупки',
+//     subtitle: 'В наше время, кэшбек является одной из основных причин выбора того или иного банка. Для всех не определившихся и создан этот конкурс',
+//     favourites: [],
+//     applicants: [
+//       {
+//         img: './images/sber.png',
+//         name: 'СберБанк',
+//         description: '4 уровня привилегий',
+//         likes: []
+//       },
+//       {
+//         img: './images/tinkoff.jpg',
+//         name: 'Тинькофф',
+//         description: 'от 1% до 30%',
+//         likes: []
+//       },
+//       {
+//         img: './images/alfa.png',
+//         name: 'АльфаБанк',
+//         description: '1,5-2% на всё',
+//         likes: []
+//       },
+//       {
+//         img: './images/vtb.png',
+//         name: 'ВТБ',
+//         description: '2-4% на всё',
+//         likes: []
+//       },
+//       {
+//         img: './images/otkritie.png',
+//         name: 'Открытие',
+//         description: '2-3% на всё',
+//         likes: []
+//       },
+//       {
+//         img: './images/raiffeisen.png',
+//         name: 'РайффайзенБанк',
+//         description: '1% на все покупки',
+//         likes: []
+//       }
+//     ]
+//   }
+// ];
+// 
+// initCards.forEach(card => {
+//   localStorage.setItem('card__' + card.cardTitle, JSON.stringify(card));
+// });
+// 
+// localStorage.setItem('login__Саша', '12345123');
+// localStorage.setItem('login__Даша', '12345123');
+// localStorage.setItem('login__Лиза', '12345123');
+// localStorage.setItem('login__Ксюша', '12345123');
+// 
+// localStorage.setItem('data__Саша', '{"image":"./images/avatar.png","name":"Саша","description":"Я пользуюсь VoteChain"}');
+// localStorage.setItem('data__Даша', '{"image":"./images/avatar.png","name":"Даша","description":"Я пользуюсь VoteChain"}');
+// localStorage.setItem('data__Лиза', '{"image":"./images/avatar.png","name":"Лиза","description":"Я пользуюсь VoteChain"}');
+// localStorage.setItem('data__Ксюша', '{"image":"./images/avatar.png","name":"Ксюша","description":"Я пользуюсь VoteChain"}');
+
+// localStorage.clear();

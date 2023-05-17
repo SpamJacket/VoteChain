@@ -69,9 +69,9 @@
         <form class="popup__info-settings">
           <input class="popup__input-info-img" name="image" type="file" accept="image/png, image/jpeg">
           <input class="popup__input-info-text popup__input-info-text-title" name="contest-title" type="text" placeholder="Введите название" required
-            minlength="2" maxlength="100" value="">
+            minlength="2" maxlength="50" value="">
           <textarea class="popup__input-info-text popup__input-info-text-subtitle" name="contest-description" placeholder="Введите описание" required
-          minlength="2" maxlength="512" value=""></textarea>
+          minlength="2" maxlength="196" value=""></textarea>
         </form>
 
         <button class="popup__add-button" type="button" aria-label="Добавить конкурс"></button>
@@ -99,7 +99,7 @@
         <form class="popup__form">
           <input class="popup__avatar" name="avatar" type="file" accept="image/png, image/jpeg">
           <input class="popup__input popup__input_type_name" name="name" type="text" placeholder="Введите имя" required
-            minlength="2" maxlength="30" value="">
+            minlength="2" maxlength="20" value="">
           <textarea class="popup__input popup__input_type_description" name="about" type="text" placeholder="Введите статус" required
             minlength="2" maxlength="256" value=""></textarea>
         </form>
@@ -120,7 +120,7 @@
       <img class="popup__card-img" src="" alt="">
       <h4 class="popup__card-title"></h4>
       <p class="popup__card-description"></p>
-      <button class="popup__like" type="button" aria-label="Лайк">
+      <button class="popup__like" type="button" aria-label="Лайк"></button>
       <p class="popup__counter"></p>
     </li>
   </template>
@@ -129,9 +129,9 @@
       <form class="popup__card-form">
         <input class="popup__input-card-img" name="card-image" type="file" accept="image/png, image/jpeg">
         <input class="popup__input-card-text popup__input-card-text-title" name="card-title" type="text" placeholder="Введите имя" required
-          minlength="2" maxlength="30" value="">
+          minlength="2" maxlength="15" value="">
         <input class="popup__input-card-text popup__input-card-text-subtitle" name="card-description" type="text" placeholder="Введите описание" required
-          minlength="2" maxlength="100" value="">
+          minlength="2" maxlength="30" value="">
       </form>
     </li>
   </template>
